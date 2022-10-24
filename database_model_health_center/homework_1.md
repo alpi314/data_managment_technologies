@@ -88,6 +88,10 @@ V podanem tekstu identificirajte gradnike ER modela: atribute, entitetne tipe, i
 - pacient 'opravi' preiskava
 - pacient 'ima postavljeno' diagnoza
 
+<strong> Dodatni Indentifikatorji: </strong>
+- pricakovana_vrednost_id
+- icd_id
+
 <strong> Dodatna Razmerja: </strong>
-- preiskava 'ima' pricakovana_vrednost
+- preiskava 'predvideva' pricakovana_vrednost
 - diagnoza 'je opisana z' icd
