@@ -798,7 +798,7 @@ NAMA 0 Arial,8,N</a:FontList>
 <o:RelationshipSymbol Id="o18">
 <a:CreationDate>1667046144</a:CreationDate>
 <a:ModificationDate>1667046144</a:ModificationDate>
-<a:Rect>((-33036,15000), (-26962,27000))</a:Rect>
+<a:Rect>((-33000,15000), (-27000,27000))</a:Rect>
 <a:ListOfPoints>((-30000,27000),(-30000,15000))</a:ListOfPoints>
 <a:ArrowStyle>4627</a:ArrowStyle>
 <a:LineColor>11184640</a:LineColor>
@@ -817,10 +817,10 @@ NAMA 0 Arial,8,N</a:FontList>
 </o:RelationshipSymbol>
 <o:RelationshipSymbol Id="o21">
 <a:CreationDate>1667046146</a:CreationDate>
-<a:ModificationDate>1667046431</a:ModificationDate>
-<a:Rect>((-24000,13000), (3000,14746))</a:Rect>
-<a:ListOfPoints>((-24000,13500),(3000,13500))</a:ListOfPoints>
-<a:ArrowStyle>4631</a:ArrowStyle>
+<a:ModificationDate>1667046146</a:ModificationDate>
+<a:Rect>((-22500,12700), (4500,14796))</a:Rect>
+<a:ListOfPoints>((-22500,13500),(4500,13500))</a:ListOfPoints>
+<a:ArrowStyle>4371</a:ArrowStyle>
 <a:LineColor>11184640</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>DISPNAME 0 Arial,8,N
@@ -838,9 +838,9 @@ NAMA 0 Arial,8,N</a:FontList>
 <o:RelationshipSymbol Id="o24">
 <a:CreationDate>1667046149</a:CreationDate>
 <a:ModificationDate>1667046149</a:ModificationDate>
-<a:Rect>((15000,13000), (33000,14796))</a:Rect>
+<a:Rect>((15000,12700), (33000,14796))</a:Rect>
 <a:ListOfPoints>((15000,13500),(33000,13500))</a:ListOfPoints>
-<a:ArrowStyle>5906</a:ArrowStyle>
+<a:ArrowStyle>4371</a:ArrowStyle>
 <a:LineColor>11184640</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>DISPNAME 0 Arial,8,N
@@ -858,9 +858,9 @@ NAMA 0 Arial,8,N</a:FontList>
 <o:RelationshipSymbol Id="o27">
 <a:CreationDate>1667046152</a:CreationDate>
 <a:ModificationDate>1667046152</a:ModificationDate>
-<a:Rect>((-33261,1500), (-26737,10500))</a:Rect>
+<a:Rect>((-33000,1500), (-27000,10500))</a:Rect>
 <a:ListOfPoints>((-30000,10500),(-30000,1500))</a:ListOfPoints>
-<a:ArrowStyle>4627</a:ArrowStyle>
+<a:ArrowStyle>4371</a:ArrowStyle>
 <a:LineColor>11184640</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>DISPNAME 0 Arial,8,N
@@ -880,7 +880,7 @@ NAMA 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1667046153</a:ModificationDate>
 <a:Rect>((-25500,0), (4500,12000))</a:Rect>
 <a:ListOfPoints>((-25500,12000),(4500,0))</a:ListOfPoints>
-<a:ArrowStyle>4627</a:ArrowStyle>
+<a:ArrowStyle>4371</a:ArrowStyle>
 <a:LineColor>11184640</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>DISPNAME 0 Arial,8,N
@@ -898,9 +898,9 @@ NAMA 0 Arial,8,N</a:FontList>
 <o:RelationshipSymbol Id="o33">
 <a:CreationDate>1667046159</a:CreationDate>
 <a:ModificationDate>1667046159</a:ModificationDate>
-<a:Rect>((16500,-2300), (31500,-201))</a:Rect>
+<a:Rect>((16500,-2300), (31500,-202))</a:Rect>
 <a:ListOfPoints>((16500,-1500),(31500,-1500))</a:ListOfPoints>
-<a:ArrowStyle>4882</a:ArrowStyle>
+<a:ArrowStyle>4371</a:ArrowStyle>
 <a:LineColor>11184640</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>DISPNAME 0 Arial,8,N
@@ -918,9 +918,9 @@ NAMA 0 Arial,8,N</a:FontList>
 <o:RelationshipSymbol Id="o35">
 <a:CreationDate>1667046162</a:CreationDate>
 <a:ModificationDate>1667046162</a:ModificationDate>
-<a:Rect>((-31911,-13500), (-25087,-3000))</a:Rect>
+<a:Rect>((-31500,-13500), (-25500,-3000))</a:Rect>
 <a:ListOfPoints>((-28500,-3000),(-28500,-13500))</a:ListOfPoints>
-<a:ArrowStyle>4882</a:ArrowStyle>
+<a:ArrowStyle>4371</a:ArrowStyle>
 <a:LineColor>11184640</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>DISPNAME 0 Arial,8,N
@@ -1369,7 +1369,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:Code>OBRAVNAVA</a:Code>
 <a:CreationDate>1667044793</a:CreationDate>
 <a:Creator>Aleksander</a:Creator>
-<a:ModificationDate>1667046523</a:ModificationDate>
+<a:ModificationDate>1667046339</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
 <c:Identifiers>
 <o:Identifier Id="o75">
@@ -1428,7 +1428,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:Code>CAKALNA_VRSTA</a:Code>
 <a:CreationDate>1667044844</a:CreationDate>
 <a:Creator>Aleksander</a:Creator>
-<a:ModificationDate>1667046422</a:ModificationDate>
+<a:ModificationDate>1667044896</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
 <c:Attributes>
 <o:EntityAttribute Id="o82">
@@ -1459,7 +1459,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:Code>ODDELEK</a:Code>
 <a:CreationDate>1667044936</a:CreationDate>
 <a:Creator>Aleksander</a:Creator>
-<a:ModificationDate>1667046422</a:ModificationDate>
+<a:ModificationDate>1667045007</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
 <c:Identifiers>
 <o:Identifier Id="o86">
@@ -1518,7 +1518,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:Code>PREISKAVA</a:Code>
 <a:CreationDate>1667045249</a:CreationDate>
 <a:Creator>Aleksander</a:Creator>
-<a:ModificationDate>1667046595</a:ModificationDate>
+<a:ModificationDate>1667045357</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
 <c:Identifiers>
 <o:Identifier Id="o92">
@@ -1587,7 +1587,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:Code>PRICAKOVANA_VREDNOST</a:Code>
 <a:CreationDate>1667045360</a:CreationDate>
 <a:Creator>Aleksander</a:Creator>
-<a:ModificationDate>1667046595</a:ModificationDate>
+<a:ModificationDate>1667045520</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
 <c:Identifiers>
 <o:Identifier Id="o100">
@@ -1708,7 +1708,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:Code>DIAGNOZA</a:Code>
 <a:CreationDate>1667045889</a:CreationDate>
 <a:Creator>Aleksander</a:Creator>
-<a:ModificationDate>1667046498</a:ModificationDate>
+<a:ModificationDate>1667045940</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
 <c:Identifiers>
 <o:Identifier Id="o113">
@@ -1769,7 +1769,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:Code>ICD</a:Code>
 <a:CreationDate>1667046006</a:CreationDate>
 <a:Creator>Aleksander</a:Creator>
-<a:ModificationDate>1667046498</a:ModificationDate>
+<a:ModificationDate>1667046070</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
 <c:Identifiers>
 <o:Identifier Id="o120">
@@ -1870,15 +1870,14 @@ EntityComment 0 Arial,8,N</a:FontList>
 </o:Relationship>
 <o:Relationship Id="o23">
 <a:ObjectID>922DD5E6-22CF-41E1-88E6-94D5AFCF432A</a:ObjectID>
-<a:Name>caka_v</a:Name>
-<a:Code>CAKA_V</a:Code>
+<a:Name>Relationship_3</a:Name>
+<a:Code>RELATIONSHIP_3</a:Code>
 <a:CreationDate>1667046146</a:CreationDate>
 <a:Creator>Aleksander</a:Creator>
-<a:ModificationDate>1667046386</a:ModificationDate>
+<a:ModificationDate>1667046146</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
-<a:DependentRole>B</a:DependentRole>
 <a:Entity1ToEntity2RoleCardinality>0,n</a:Entity1ToEntity2RoleCardinality>
-<a:Entity2ToEntity1RoleCardinality>1,1</a:Entity2ToEntity1RoleCardinality>
+<a:Entity2ToEntity1RoleCardinality>0,1</a:Entity2ToEntity1RoleCardinality>
 <c:Object1>
 <o:Entity Ref="o41"/>
 </c:Object1>
@@ -1888,15 +1887,14 @@ EntityComment 0 Arial,8,N</a:FontList>
 </o:Relationship>
 <o:Relationship Id="o26">
 <a:ObjectID>3A5EDBC0-02EF-43F6-AB15-8EC4306B128C</a:ObjectID>
-<a:Name>pripada</a:Name>
-<a:Code>PRIPADA</a:Code>
+<a:Name>Relationship_4</a:Name>
+<a:Code>RELATIONSHIP_4</a:Code>
 <a:CreationDate>1667046149</a:CreationDate>
 <a:Creator>Aleksander</a:Creator>
-<a:ModificationDate>1667046422</a:ModificationDate>
+<a:ModificationDate>1667046149</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
-<a:DependentRole>A</a:DependentRole>
-<a:Entity1ToEntity2RoleCardinality>1,1</a:Entity1ToEntity2RoleCardinality>
-<a:Entity2ToEntity1RoleCardinality>0,n</a:Entity2ToEntity1RoleCardinality>
+<a:Entity1ToEntity2RoleCardinality>0,n</a:Entity1ToEntity2RoleCardinality>
+<a:Entity2ToEntity1RoleCardinality>0,1</a:Entity2ToEntity1RoleCardinality>
 <c:Object1>
 <o:Entity Ref="o42"/>
 </c:Object1>
@@ -1906,14 +1904,14 @@ EntityComment 0 Arial,8,N</a:FontList>
 </o:Relationship>
 <o:Relationship Id="o29">
 <a:ObjectID>822B6553-8D2E-4CD8-BB8F-C6DC0AD3D5B0</a:ObjectID>
-<a:Name>ima_postavljeno</a:Name>
-<a:Code>IMA_POSTAVLJENO</a:Code>
+<a:Name>Relationship_5</a:Name>
+<a:Code>RELATIONSHIP_5</a:Code>
 <a:CreationDate>1667046152</a:CreationDate>
 <a:Creator>Aleksander</a:Creator>
-<a:ModificationDate>1667046452</a:ModificationDate>
+<a:ModificationDate>1667046152</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
 <a:Entity1ToEntity2RoleCardinality>0,n</a:Entity1ToEntity2RoleCardinality>
-<a:Entity2ToEntity1RoleCardinality>1,1</a:Entity2ToEntity1RoleCardinality>
+<a:Entity2ToEntity1RoleCardinality>0,1</a:Entity2ToEntity1RoleCardinality>
 <c:Object1>
 <o:Entity Ref="o47"/>
 </c:Object1>
@@ -1923,14 +1921,14 @@ EntityComment 0 Arial,8,N</a:FontList>
 </o:Relationship>
 <o:Relationship Id="o32">
 <a:ObjectID>1252B5BE-3478-4417-90E5-25986BDDEB41</a:ObjectID>
-<a:Name>ima_odrejeno</a:Name>
-<a:Code>IMA_ODREJENO</a:Code>
+<a:Name>Relationship_6</a:Name>
+<a:Code>RELATIONSHIP_6</a:Code>
 <a:CreationDate>1667046153</a:CreationDate>
 <a:Creator>Aleksander</a:Creator>
-<a:ModificationDate>1667046523</a:ModificationDate>
+<a:ModificationDate>1667046153</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
 <a:Entity1ToEntity2RoleCardinality>0,n</a:Entity1ToEntity2RoleCardinality>
-<a:Entity2ToEntity1RoleCardinality>1,1</a:Entity2ToEntity1RoleCardinality>
+<a:Entity2ToEntity1RoleCardinality>0,1</a:Entity2ToEntity1RoleCardinality>
 <c:Object1>
 <o:Entity Ref="o43"/>
 </c:Object1>
@@ -1940,14 +1938,14 @@ EntityComment 0 Arial,8,N</a:FontList>
 </o:Relationship>
 <o:Relationship Id="o34">
 <a:ObjectID>A2BEC2C7-1EDE-4EF9-BA92-A8DD0BAB29D9</a:ObjectID>
-<a:Name>pricakuje</a:Name>
-<a:Code>PRICAKUJE</a:Code>
+<a:Name>Relationship_7</a:Name>
+<a:Code>RELATIONSHIP_7</a:Code>
 <a:CreationDate>1667046159</a:CreationDate>
 <a:Creator>Aleksander</a:Creator>
-<a:ModificationDate>1667046595</a:ModificationDate>
+<a:ModificationDate>1667046159</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
-<a:Entity1ToEntity2RoleCardinality>1,1</a:Entity1ToEntity2RoleCardinality>
-<a:Entity2ToEntity1RoleCardinality>0,n</a:Entity2ToEntity1RoleCardinality>
+<a:Entity1ToEntity2RoleCardinality>0,n</a:Entity1ToEntity2RoleCardinality>
+<a:Entity2ToEntity1RoleCardinality>0,1</a:Entity2ToEntity1RoleCardinality>
 <c:Object1>
 <o:Entity Ref="o44"/>
 </c:Object1>
@@ -1957,14 +1955,14 @@ EntityComment 0 Arial,8,N</a:FontList>
 </o:Relationship>
 <o:Relationship Id="o37">
 <a:ObjectID>A031904E-6CB5-4D20-B5A6-72BC0C7695E8</a:ObjectID>
-<a:Name>je_kvalificirana_z</a:Name>
-<a:Code>JE_KVALIFICIRANA_Z</a:Code>
+<a:Name>Relationship_8</a:Name>
+<a:Code>RELATIONSHIP_8</a:Code>
 <a:CreationDate>1667046162</a:CreationDate>
 <a:Creator>Aleksander</a:Creator>
-<a:ModificationDate>1667046498</a:ModificationDate>
+<a:ModificationDate>1667046162</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
-<a:Entity1ToEntity2RoleCardinality>1,1</a:Entity1ToEntity2RoleCardinality>
-<a:Entity2ToEntity1RoleCardinality>0,n</a:Entity2ToEntity1RoleCardinality>
+<a:Entity1ToEntity2RoleCardinality>0,n</a:Entity1ToEntity2RoleCardinality>
+<a:Entity2ToEntity1RoleCardinality>0,1</a:Entity2ToEntity1RoleCardinality>
 <c:Object1>
 <o:Entity Ref="o48"/>
 </c:Object1>

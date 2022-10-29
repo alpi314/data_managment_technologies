@@ -41,7 +41,7 @@ V podanem tekstu identificirajte gradnike ER modela: atribute, entitetne tipe, i
     - datum_rojstva
     - spol
     - naslov
-    - st_obravnave
+- obravnava
 - oddelek
     - oddelek_id
     - ime
