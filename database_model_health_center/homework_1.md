@@ -28,8 +28,9 @@ V podanem tekstu identificirajte gradnike ER modela: atribute, entitetne tipe, i
 
 <strong> Entitetni Tipi: </strong>
 - pacient
-- oddelek
+- obravnava
 - cakalna_vrsta
+- oddelek
 - preiskava
 - diagnoza
 
@@ -42,6 +43,7 @@ V podanem tekstu identificirajte gradnike ER modela: atribute, entitetne tipe, i
     - spol
     - naslov
 - obravnava
+    - st_obravnave
 - oddelek
     - oddelek_id
     - ime
@@ -55,43 +57,53 @@ V podanem tekstu identificirajte gradnike ER modela: atribute, entitetne tipe, i
     - datum
     - ime
     - cena_za_samoplacnike
-    - pricakovana_vrednost_id
-- pricakovana_vrednost
-    - pricakovana_vrednost_id
-    - dopustna_min
-    - dopustna_max
-    - referencna_moski_min
-    - referencna_moski_max
-    - referencna_zenske_min
-    - referencna_zenske_max
+    - dopustni_min
+    - dopustni_max
+    - pricakovani_z_min
+    - pricakovani_z_max
+    - pricakovani_m_min
+    - pricakovani_m_max
 - diagnoza
     - diagnoza_id
     - icd_sifra
     - slovensko_ime
     - anglesko_ime
-- icd
-    - icd_id
-    - icd_sifra
-    - icd_sistem
-    - icd_opis
+    - icd_opisi
 
 <strong> Indentifikatorji: </strong>
 - kzzs
-- st_obravnave & oddelek_id
+- oddelek_id
 - st_obravnave
 - preiskava_id
 - diagnoza_id
 
 <strong> Razmerja: </strong>
-- pacient 'čaka v' cakalna_vrsta
+- pacient 'ima dodeljeno' obravnava
+- obravnava 'je vkljucena v' cakalna_vrsta
 - cakalna_vrsta 'pripada' oddelku
 - pacient 'opravi' preiskava
 - pacient 'ima postavljeno' diagnoza
 
-<strong> Dodatni Indentifikatorji: </strong>
-- pricakovana_vrednost_id
-- icd_id
+<strong> Dodatno </strong>
+- Entitetni tipi
+    - samoplacnik
+    - oseba & zavarovanec (razbijemo pacienta na osebo in zavarovanec)
+    - naslov
+    - odrejene_preiskave (za zbiranje rezultatov)
+    - 3 tabele icd_sistemov kot šifranti
+    - pricakovana_vrednost (tabela dopustnih vrednosti in referenc za M, Ž)
+    - referenca_M
+    - referenca_Ž
+- Atributi
+    - nujni za zgornje tabele
+    - izračunani so pri šibkih tipih cakalna_vrsta in odrejene_preiskave
+    - izracunani bodo tudi tuji ključi
 
-<strong> Dodatna Razmerja: </strong>
-- preiskava 'predvideva' pricakovana_vrednost
-- diagnoza 'je opisana z' icd
+<strong> Smiselne omejitve </strong>
+- samo veljavne emso stevilke (NE)
+- pacient ne more začeti obravnave, če je že v aktivni obravnavi (NE)
+- znotraj ene obravnave ne moremo cakati v vec cakalnih vrstah za isti oddelek (NE)
+- razne omejitve v povezavi s kardinalnostjo kot npr pricakovana referenca ima kvečemu eno referenco za moske (DA)
+- kzzs stevilke so unikatne (DA)
+- format datuma in časa, kzzs so samo stevilke, ter druge domene (DA)
+- icd_sifre so unikatne znotraj tabel (DA), med tabelami (NE - lahko bi naredili se eno tabelo in tam nastavili AK)

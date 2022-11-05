@@ -1,8 +1,12 @@
 /*==============================================================*/
 /* DBMS name:      PostgreSQL 8                                 */
-/* Created on:     10/31/2022 5:22:51 PM                        */
+/* Created on:     11/5/2022 3:07:39 PM                         */
 /*==============================================================*/
 
+
+drop index ANGLESKI_ICD_PK;
+
+drop table ANGLESKI_ICD;
 
 drop index PRIPADA_FK;
 
@@ -12,7 +16,11 @@ drop index CAKALNA_VRSTA_PK;
 
 drop table CAKALNA_VRSTA;
 
-drop index JE_KVALIFICIRANA_Z_FK;
+drop index IMA_MEDNARODNI_FK;
+
+drop index IMA_ANG_INDENTIFIKATOR_FK;
+
+drop index IMA_SLO_INDENTIFIKATOR_FK;
 
 drop index IMA_POSTAVLJENO_FK;
 
@@ -20,9 +28,9 @@ drop index DIAGNOZA_PK;
 
 drop table DIAGNOZA;
 
-drop index ICD_PK;
+drop index MEDNARODNI_ICD_PK;
 
-drop table ICD;
+drop table MEDNARODNI_ICD;
 
 drop index NASLOV_PK;
 
@@ -66,9 +74,9 @@ drop index PREISKAVA_PK;
 
 drop table PREISKAVA;
 
-drop index ZA_ZENSKE_PRICAKUJE_FK;
+drop index IMA_REFERENCO_Z_FK;
 
-drop index ZA_MOSKE_PRICAKUJE_FK;
+drop index IMA_REFERENCO_M_FK;
 
 drop index PRICAKOVANA_VREDNOST_PK;
 
@@ -82,13 +90,39 @@ drop index REFERENCA_ZENSKE_PK;
 
 drop table REFERENCA_ZENSKE;
 
+drop index SAMOPLACNIK_IMA_PODATKE_FK;
+
 drop index SAMOPLACNIK_PK;
 
 drop table SAMOPLACNIK;
 
+drop index SLOVENSKI_ICD_PK;
+
+drop table SLOVENSKI_ICD;
+
+drop index ZAVAROVANEC_IMA_PODATKE_FK;
+
 drop index ZAVAROVANEC_PK;
 
 drop table ZAVAROVANEC;
+
+/*==============================================================*/
+/* Table: ANGLESKI_ICD                                          */
+/*==============================================================*/
+create table ANGLESKI_ICD (
+   ICD_SIFRA            VARCHAR(100)         null,
+   ICD_OPIS_A           TEXT                 null,
+   ICD_OPIS_SLO_A       TEXT                 null,
+   ANG_ICD_ID           INT4                 not null,
+   constraint PK_ANGLESKI_ICD primary key (ANG_ICD_ID)
+);
+
+/*==============================================================*/
+/* Index: ANGLESKI_ICD_PK                                       */
+/*==============================================================*/
+create unique index ANGLESKI_ICD_PK on ANGLESKI_ICD (
+ANG_ICD_ID
+);
 
 /*==============================================================*/
 /* Table: CAKALNA_VRSTA                                         */
@@ -129,8 +163,10 @@ ODDELEK_ID
 /*==============================================================*/
 create table DIAGNOZA (
    DIAGNOZA_ID          SERIAL               not null,
-   ICD_ID               INT4                 not null,
    ST_OBRAVNAVE         INT4                 not null,
+   ICD_MED_ID           INT4                 null,
+   ANG_ICD_ID           INT4                 null,
+   SLO_ICD_ID           INT4                 null,
    SLOVENSKO_IME        CHAR(100)            not null,
    ANGLESKO_IME         CHAR(100)            not null,
    constraint PK_DIAGNOZA primary key (DIAGNOZA_ID)
@@ -151,28 +187,42 @@ ST_OBRAVNAVE
 );
 
 /*==============================================================*/
-/* Index: JE_KVALIFICIRANA_Z_FK                                 */
+/* Index: IMA_SLO_INDENTIFIKATOR_FK                             */
 /*==============================================================*/
-create  index JE_KVALIFICIRANA_Z_FK on DIAGNOZA (
-ICD_ID
+create  index IMA_SLO_INDENTIFIKATOR_FK on DIAGNOZA (
+SLO_ICD_ID
 );
 
 /*==============================================================*/
-/* Table: ICD                                                   */
+/* Index: IMA_ANG_INDENTIFIKATOR_FK                             */
 /*==============================================================*/
-create table ICD (
-   ICD_ID               SERIAL               not null,
+create  index IMA_ANG_INDENTIFIKATOR_FK on DIAGNOZA (
+ANG_ICD_ID
+);
+
+/*==============================================================*/
+/* Index: IMA_MEDNARODNI_FK                                     */
+/*==============================================================*/
+create  index IMA_MEDNARODNI_FK on DIAGNOZA (
+ICD_MED_ID
+);
+
+/*==============================================================*/
+/* Table: MEDNARODNI_ICD                                        */
+/*==============================================================*/
+create table MEDNARODNI_ICD (
    ICD_SIFRA            VARCHAR(100)         null,
-   ICD_SISTEM           VARCHAR(100)         null,
-   ICD_OPIS             TEXT                 null,
-   constraint PK_ICD primary key (ICD_ID)
+   ICD_OPIS_M           TEXT                 null,
+   ICD_OPIS_SLO_M       TEXT                 null,
+   ICD_MED_ID           INT4                 not null,
+   constraint PK_MEDNARODNI_ICD primary key (ICD_MED_ID)
 );
 
 /*==============================================================*/
-/* Index: ICD_PK                                                */
+/* Index: MEDNARODNI_ICD_PK                                     */
 /*==============================================================*/
-create unique index ICD_PK on ICD (
-ICD_ID
+create unique index MEDNARODNI_ICD_PK on MEDNARODNI_ICD (
+ICD_MED_ID
 );
 
 /*==============================================================*/
@@ -200,7 +250,7 @@ NASLOV_ID
 /*==============================================================*/
 create table OBRAVNAVA (
    ST_OBRAVNAVE         INT4                 not null,
-   OSEBA_ID             INT4                 not null,
+   KZZS                 INT4                 not null,
    CAS_ZACETKA          DATE                 null,
    CAS_ZAKLJUCKA        DATE                 null,
    constraint PK_OBRAVNAVA primary key (ST_OBRAVNAVE)
@@ -217,7 +267,7 @@ ST_OBRAVNAVE
 /* Index: IMA_DODELJENO_FK                                      */
 /*==============================================================*/
 create  index IMA_DODELJENO_FK on OBRAVNAVA (
-OSEBA_ID
+KZZS
 );
 
 /*==============================================================*/
@@ -304,12 +354,12 @@ NASLOV_ID
 /*==============================================================*/
 create table PLACANE_PREISKAVE (
    PREISKAVA_ID         INT4                 not null,
-   OSEBA_ID             INT4                 not null,
+   EMSO                 NUMERIC(14)          not null,
    DATUM_PLACILA        DATE                 null,
    PLACANE_PREISKAVE_DATUM_ZAHTEVE DATE                 null,
    PLACANE_PREISKAVE_OPOMBA TEXT                 null,
    PLACANE_REZULTAT_PREISKAVE FLOAT8               null,
-   constraint PK_PLACANE_PREISKAVE primary key (PREISKAVA_ID, OSEBA_ID)
+   constraint PK_PLACANE_PREISKAVE primary key (PREISKAVA_ID, EMSO)
 );
 
 /*==============================================================*/
@@ -317,7 +367,7 @@ create table PLACANE_PREISKAVE (
 /*==============================================================*/
 create unique index PLACANE_PREISKAVE_PK on PLACANE_PREISKAVE (
 PREISKAVA_ID,
-OSEBA_ID
+EMSO
 );
 
 /*==============================================================*/
@@ -331,7 +381,7 @@ PREISKAVA_ID
 /* Index: ZAHTEVA_FK                                            */
 /*==============================================================*/
 create  index ZAHTEVA_FK on PLACANE_PREISKAVE (
-OSEBA_ID
+EMSO
 );
 
 /*==============================================================*/
@@ -364,8 +414,8 @@ PRICAKOVANA_VREDNOST_ID
 /*==============================================================*/
 create table PRICAKOVANA_VREDNOST (
    PRICAKOVANA_VREDNOST_ID SERIAL               not null,
-   REFERENCA_MOSKI_ID   INT4                 null,
    REFERENCA_ZENSKE_ID  INT4                 null,
+   REFERENCA_MOSKI_ID   INT4                 null,
    DOPUSTNA_MIN         FLOAT8               null,
    DOPUSTNA_MAX         FLOAT8               null,
    constraint PK_PRICAKOVANA_VREDNOST primary key (PRICAKOVANA_VREDNOST_ID)
@@ -379,16 +429,16 @@ PRICAKOVANA_VREDNOST_ID
 );
 
 /*==============================================================*/
-/* Index: ZA_MOSKE_PRICAKUJE_FK                                 */
+/* Index: IMA_REFERENCO_M_FK                                    */
 /*==============================================================*/
-create  index ZA_MOSKE_PRICAKUJE_FK on PRICAKOVANA_VREDNOST (
+create  index IMA_REFERENCO_M_FK on PRICAKOVANA_VREDNOST (
 REFERENCA_MOSKI_ID
 );
 
 /*==============================================================*/
-/* Index: ZA_ZENSKE_PRICAKUJE_FK                                */
+/* Index: IMA_REFERENCO_Z_FK                                    */
 /*==============================================================*/
-create  index ZA_ZENSKE_PRICAKUJE_FK on PRICAKOVANA_VREDNOST (
+create  index IMA_REFERENCO_Z_FK on PRICAKOVANA_VREDNOST (
 REFERENCA_ZENSKE_ID
 );
 
@@ -432,34 +482,67 @@ REFERENCA_ZENSKE_ID
 /* Table: SAMOPLACNIK                                           */
 /*==============================================================*/
 create table SAMOPLACNIK (
-   OSEBA_ID             INT4                 not null,
    EMSO                 NUMERIC(14)          not null,
+   OSEBA_ID             INT4                 null,
    DATUM_VNOSA          DATE                 null,
-   constraint PK_SAMOPLACNIK primary key (OSEBA_ID)
+   constraint PK_SAMOPLACNIK primary key (EMSO)
 );
 
 /*==============================================================*/
 /* Index: SAMOPLACNIK_PK                                        */
 /*==============================================================*/
 create unique index SAMOPLACNIK_PK on SAMOPLACNIK (
+EMSO
+);
+
+/*==============================================================*/
+/* Index: SAMOPLACNIK_IMA_PODATKE_FK                            */
+/*==============================================================*/
+create  index SAMOPLACNIK_IMA_PODATKE_FK on SAMOPLACNIK (
 OSEBA_ID
+);
+
+/*==============================================================*/
+/* Table: SLOVENSKI_ICD                                         */
+/*==============================================================*/
+create table SLOVENSKI_ICD (
+   ICD_SIFRA            VARCHAR(100)         null,
+   ICD_OPIS_S           TEXT                 null,
+   ICD_OPIS_SLO_S       TEXT                 null,
+   SLO_ICD_ID           INT4                 not null,
+   constraint PK_SLOVENSKI_ICD primary key (SLO_ICD_ID),
+   constraint AK_UNIQUE_GLOBAL_CODE_SLOVENSK unique (ICD_SIFRA)
+);
+
+/*==============================================================*/
+/* Index: SLOVENSKI_ICD_PK                                      */
+/*==============================================================*/
+create unique index SLOVENSKI_ICD_PK on SLOVENSKI_ICD (
+SLO_ICD_ID
 );
 
 /*==============================================================*/
 /* Table: ZAVAROVANEC                                           */
 /*==============================================================*/
 create table ZAVAROVANEC (
-   OSEBA_ID             INT4                 not null,
-   KZZS                 INT4                 null,
+   KZZS                 INT4                 not null,
+   OSEBA_ID             INT4                 null,
    DATUM_VNOSA          DATE                 null,
    DODATNO_ZAVAROVANJE  CHAR(1)              null,
-   constraint PK_ZAVAROVANEC primary key (OSEBA_ID)
+   constraint PK_ZAVAROVANEC primary key (KZZS)
 );
 
 /*==============================================================*/
 /* Index: ZAVAROVANEC_PK                                        */
 /*==============================================================*/
 create unique index ZAVAROVANEC_PK on ZAVAROVANEC (
+KZZS
+);
+
+/*==============================================================*/
+/* Index: ZAVAROVANEC_IMA_PODATKE_FK                            */
+/*==============================================================*/
+create  index ZAVAROVANEC_IMA_PODATKE_FK on ZAVAROVANEC (
 OSEBA_ID
 );
 
@@ -474,18 +557,28 @@ alter table CAKALNA_VRSTA
       on delete restrict on update restrict;
 
 alter table DIAGNOZA
+   add constraint FK_DIAGNOZA_IMA_ANG_I_ANGLESKI foreign key (ANG_ICD_ID)
+      references ANGLESKI_ICD (ANG_ICD_ID)
+      on delete restrict on update restrict;
+
+alter table DIAGNOZA
+   add constraint FK_DIAGNOZA_IMA_MEDNA_MEDNAROD foreign key (ICD_MED_ID)
+      references MEDNARODNI_ICD (ICD_MED_ID)
+      on delete restrict on update restrict;
+
+alter table DIAGNOZA
    add constraint FK_DIAGNOZA_IMA_POSTA_OBRAVNAV foreign key (ST_OBRAVNAVE)
       references OBRAVNAVA (ST_OBRAVNAVE)
       on delete restrict on update restrict;
 
 alter table DIAGNOZA
-   add constraint FK_DIAGNOZA_JE_KVALIF_ICD foreign key (ICD_ID)
-      references ICD (ICD_ID)
+   add constraint FK_DIAGNOZA_IMA_SLO_I_SLOVENSK foreign key (SLO_ICD_ID)
+      references SLOVENSKI_ICD (SLO_ICD_ID)
       on delete restrict on update restrict;
 
 alter table OBRAVNAVA
-   add constraint FK_OBRAVNAV_IMA_DODEL_ZAVAROVA foreign key (OSEBA_ID)
-      references ZAVAROVANEC (OSEBA_ID)
+   add constraint FK_OBRAVNAV_IMA_DODEL_ZAVAROVA foreign key (KZZS)
+      references ZAVAROVANEC (KZZS)
       on delete restrict on update restrict;
 
 alter table ODREJENE_PREISKAVE
@@ -509,8 +602,8 @@ alter table PLACANE_PREISKAVE
       on delete restrict on update restrict;
 
 alter table PLACANE_PREISKAVE
-   add constraint FK_PLACANE__ZAHTEVA_SAMOPLAC foreign key (OSEBA_ID)
-      references SAMOPLACNIK (OSEBA_ID)
+   add constraint FK_PLACANE__ZAHTEVA_SAMOPLAC foreign key (EMSO)
+      references SAMOPLACNIK (EMSO)
       on delete restrict on update restrict;
 
 alter table PREISKAVA
@@ -519,22 +612,22 @@ alter table PREISKAVA
       on delete restrict on update restrict;
 
 alter table PRICAKOVANA_VREDNOST
-   add constraint FK_PRICAKOV_ZA_MOSKE__REFERENC foreign key (REFERENCA_MOSKI_ID)
+   add constraint FK_PRICAKOV_REFERENC_M foreign key (REFERENCA_MOSKI_ID)
       references REFERENCA_MOSKI (REFERENCA_MOSKI_ID)
       on delete restrict on update restrict;
 
 alter table PRICAKOVANA_VREDNOST
-   add constraint FK_PRICAKOV_ZA_ZENSKE_REFERENC foreign key (REFERENCA_ZENSKE_ID)
+   add constraint FK_PRICAKOV_REFERENC_Z foreign key (REFERENCA_ZENSKE_ID)
       references REFERENCA_ZENSKE (REFERENCA_ZENSKE_ID)
       on delete restrict on update restrict;
 
 alter table SAMOPLACNIK
-   add constraint FK_SAMOPLAC_JE_OSEBA foreign key (OSEBA_ID)
+   add constraint FK_SAMOPLAC_SAMOPLACN_OSEBA foreign key (OSEBA_ID)
       references OSEBA (OSEBA_ID)
       on delete restrict on update restrict;
 
 alter table ZAVAROVANEC
-   add constraint FK_ZAVAROVA_JE2_OSEBA foreign key (OSEBA_ID)
+   add constraint FK_ZAVAROVA_ZAVAROVAN_OSEBA foreign key (OSEBA_ID)
       references OSEBA (OSEBA_ID)
       on delete restrict on update restrict;
 
