@@ -12,7 +12,7 @@
 <a:Code>CDM_HEALTH_CARE</a:Code>
 <a:CreationDate>1666863304</a:CreationDate>
 <a:Creator>aleks</a:Creator>
-<a:ModificationDate>1667656812</a:ModificationDate>
+<a:ModificationDate>1667731998</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
 <a:PackageOptionsText>[FolderOptions]
 
@@ -1100,7 +1100,7 @@ Shadow=0</a:DisplayPreferences>
 <o:RelationshipSymbol Id="o5">
 <a:CreationDate>1667046135</a:CreationDate>
 <a:ModificationDate>1667231493</a:ModificationDate>
-<a:Rect>((16285,43990), (36044,46132))</a:Rect>
+<a:Rect>((16285,43990), (36044,46182))</a:Rect>
 <a:ListOfPoints>((16285,45194),(36044,44476))</a:ListOfPoints>
 <a:ArrowStyle>4882</a:ArrowStyle>
 <a:LineColor>11184640</a:LineColor>
@@ -1200,7 +1200,7 @@ NAMA 0 Arial,8,N</a:FontList>
 <o:RelationshipSymbol Id="o22">
 <a:CreationDate>1667046159</a:CreationDate>
 <a:ModificationDate>1667230299</a:ModificationDate>
-<a:Rect>((49500,-2300), (64500,-203))</a:Rect>
+<a:Rect>((49500,-2300), (64500,-202))</a:Rect>
 <a:ListOfPoints>((49500,-1500),(64500,-1500))</a:ListOfPoints>
 <a:ArrowStyle>4882</a:ArrowStyle>
 <a:LineColor>11184640</a:LineColor>
@@ -3267,10 +3267,15 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:Code>SPOL</a:Code>
 <a:CreationDate>1667044523</a:CreationDate>
 <a:Creator>Aleksander</a:Creator>
-<a:ModificationDate>1667231251</a:ModificationDate>
+<a:ModificationDate>1667731497</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
+<a:ListOfValues>m	
+z	</a:ListOfValues>
 <a:DataType>A1</a:DataType>
 <a:Length>1</a:Length>
+<c:Domain>
+<o:Domain Ref="o210"/>
+</c:Domain>
 </o:DataItem>
 <o:DataItem Id="o83">
 <a:ObjectID>0228BA52-3FAC-452C-AF1D-939547432A2E</a:ObjectID>
@@ -3292,7 +3297,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:Modifier>Aleksander</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o210">
+<o:DataItem Id="o211">
 <a:ObjectID>2CFCDF55-5063-4F6A-A09B-B46D4B960972</a:ObjectID>
 <a:Name>hisna_oznaka</a:Name>
 <a:Code>HISNA_OZNAKA</a:Code>
@@ -3519,7 +3524,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:DataType>A100</a:DataType>
 <a:Length>100</a:Length>
 </o:DataItem>
-<o:DataItem Id="o211">
+<o:DataItem Id="o212">
 <a:ObjectID>F57A80F6-1773-45FA-AFED-0326B83C930A</a:ObjectID>
 <a:Name>icd_id</a:Name>
 <a:Code>ICD_ID</a:Code>
@@ -3540,7 +3545,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:DataType>VA100</a:DataType>
 <a:Length>100</a:Length>
 </o:DataItem>
-<o:DataItem Id="o212">
+<o:DataItem Id="o213">
 <a:ObjectID>ED7B896C-FC29-4508-849E-B1036D3E097B</a:ObjectID>
 <a:Name>icd_sistem</a:Name>
 <a:Code>ICD_SISTEM</a:Code>
@@ -3603,7 +3608,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:DataType>A20</a:DataType>
 <a:Length>20</a:Length>
 </o:DataItem>
-<o:DataItem Id="o213">
+<o:DataItem Id="o214">
 <a:ObjectID>23786E47-EECA-49F4-B3AD-7087E447B673</a:ObjectID>
 <a:Name>referenca_moski</a:Name>
 <a:Code>REFERENCA_MOSKI</a:Code>
@@ -3613,7 +3618,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:Modifier>Aleksander</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o214">
+<o:DataItem Id="o215">
 <a:ObjectID>1CD2B43B-80BB-4AB3-BB28-F308C3A53724</a:ObjectID>
 <a:Name>referenca_zenske</a:Name>
 <a:Code>REFERENCA_ZENSKE</a:Code>
@@ -3715,7 +3720,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:DataType>A20</a:DataType>
 <a:Length>20</a:Length>
 </o:DataItem>
-<o:DataItem Id="o215">
+<o:DataItem Id="o216">
 <a:ObjectID>3361FEE4-8D71-4202-8DC3-262088FFF2F3</a:ObjectID>
 <a:Name>druga_imena</a:Name>
 <a:Code>DRUGA_IMENA</a:Code>
@@ -3747,7 +3752,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:DataType>N14</a:DataType>
 <a:Length>14</a:Length>
 </o:DataItem>
-<o:DataItem Id="o216">
+<o:DataItem Id="o217">
 <a:ObjectID>A1606233-05DB-460E-9C72-554BD16CEFBE</a:ObjectID>
 <a:Name>Attribute_53</a:Name>
 <a:Code>ATTRIBUTE_53</a:Code>
@@ -3867,8 +3872,34 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:DataType>TXT</a:DataType>
 </o:DataItem>
 </c:DataItems>
+<c:Domains>
+<o:Domain Id="o210">
+<a:ObjectID>0A58D146-50C6-4126-B2B7-604525A73449</a:ObjectID>
+<a:Name>sex</a:Name>
+<a:Code>SEX</a:Code>
+<a:CreationDate>1667731464</a:CreationDate>
+<a:Creator>Aleksander</a:Creator>
+<a:ModificationDate>1667731497</a:ModificationDate>
+<a:Modifier>Aleksander</a:Modifier>
+<a:ListOfValues>m	
+z	</a:ListOfValues>
+<a:DataType>A1</a:DataType>
+<a:Length>1</a:Length>
+</o:Domain>
+<o:Domain Id="o218">
+<a:ObjectID>B78E5FE7-3C40-497C-8BC6-22002A9EB073</a:ObjectID>
+<a:Name>icd_sifra</a:Name>
+<a:Code>ICD_SIFRA</a:Code>
+<a:CreationDate>1667731998</a:CreationDate>
+<a:Creator>Aleksander</a:Creator>
+<a:ModificationDate>1667731998</a:ModificationDate>
+<a:Modifier>Aleksander</a:Modifier>
+<a:DataType>VA100</a:DataType>
+<a:Length>100</a:Length>
+</o:Domain>
+</c:Domains>
 <c:TargetModels>
-<o:TargetModel Id="o217">
+<o:TargetModel Id="o219">
 <a:ObjectID>212D6BA4-AD66-4ABA-9B9B-BF26B8BF2C43</a:ObjectID>
 <a:Name>FDM_health_care</a:Name>
 <a:Code>FDM_HEALTH_CARE</a:Code>
@@ -3876,7 +3907,7 @@ EntityComment 0 Arial,8,N</a:FontList>
 <a:Creator>Aleksander</a:Creator>
 <a:ModificationDate>1667059769</a:ModificationDate>
 <a:Modifier>Aleksander</a:Modifier>
-<a:TargetModelURL>file:///C|/Users/Aleksander/Projects/School/data_managment_technologies/database_model_health_center/FDM_health_care.pdm</a:TargetModelURL>
+<a:TargetModelURL>file:///C|/Users/aleks/Projects/School/data_managment_technologies/database_model_health_center/FDM_health_care.pdm</a:TargetModelURL>
 <a:TargetModelID>8F32F1AA-8767-456B-8260-BE3A796B3783</a:TargetModelID>
 <a:TargetModelClassID>CDE44E21-9669-11D1-9914-006097355D9B</a:TargetModelClassID>
 <c:SessionShortcuts>
